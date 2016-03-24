@@ -58,7 +58,7 @@ function hideToastPop() {
 	}, 250);
 }
 
-function setCookie(timesShown=0) {
+function setCookie(timesShown) {
 	document.cookie = cookieName + '=' + timesShown + '; max-age=' + cookieMaxAge.toString() + '; path=/';
 }
 
