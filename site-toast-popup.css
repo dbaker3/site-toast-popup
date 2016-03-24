@@ -37,3 +37,9 @@
     color: #fff;
     text-decoration: underline !important;
 }
+
+@media screen and (max-width:1023px){
+    #sitetoastpopup {
+        display:none;
+    }
+}
