@@ -35,4 +35,5 @@
 
 #sitetoastpopup a {
     color: #fff;
+    text-decoration: underline !important;
 }

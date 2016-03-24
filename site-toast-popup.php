@@ -16,7 +16,7 @@ function sitetoastpopup_enqueue_files() {
 }
 add_action('wp_enqueue_scripts', 'sitetoastpopup_enqueue_files');
 
-function display_site_toast_popup() {
+function sitetoastpopup_display_popup() {
     $html = '
     <div id="sitetoastpopup" class="">
         Need help using the site?
@@ -25,4 +25,26 @@ function display_site_toast_popup() {
     </div>';
     echo $html;
 }
-add_action('wp_footer','display_site_toast_popup');
+add_action('wp_footer','sitetoastpopup_display_popup');
+
+
+/* Google Analytics Event Tracking */
+function sitetoastpopup_ga_events(){
+	if(!is_user_logged_in()){ ?>
+		<script>
+			jQuery('#sitetoastpopup a').click(function(){
+				var category = 'SiteToastPopUp';
+				var action = 'Click';
+				var label = 'Link Visited';
+				ga('send', 'event', category , action, label);
+			});
+			jQuery('#sitetoastpopup .closer').click(function(){
+				var category = 'SiteToastPopUp';
+				var action = 'Click';
+				var label = 'Closed PopUp';
+				ga('send', 'event', category , action, label);
+			});		
+		</script>
+	<?php }
+}
+add_action( 'wp_footer', 'sitetoastpopup_ga_events' );
