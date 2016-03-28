@@ -20,7 +20,7 @@ function sitetoastpopup_display_popup() {
     $html = '
     <div id="sitetoastpopup" class="">
         Need help using the site?
-        <a href="http://gots.library.milligan.edu/tutorial/welcome-to-the-milligan-libraries-webpage/">Use the tutorial</a>
+        <a href="http://gots.library.milligan.edu/tutorial/welcome-to-the-milligan-libraries-webpage/">Take the tutorial</a>
         <div class="closer">x</div>
     </div>';
     echo $html;
